@@ -54,10 +54,11 @@
                     </a>
                 </li>
                 <li class="nav-item nav-item-submenu">
-                    <a href="#" class="nav-link"><i class="icon-copy"></i> <span>Layouts</span></a>
+                    <a href="#" class="nav-link"><i class="icon-copy"></i> <span>Categories</span></a>
 
                     <ul class="nav nav-group-sub" data-submenu-title="Layouts">
-                        <li class="nav-item"><a href="#" class="nav-link">Default layout</a></li>
+                        <li class="nav-item"><a href="{{ route('category.show') }}" class="nav-link">Show Category</a></li>
+                        <li class="nav-item"><a href="{{ route('categories') }}" class="nav-link">Add Category</a></li>
                         <li class="nav-item"><a href="#" class="nav-link active">Layout 2</a>
                         </li>
                     </ul>
