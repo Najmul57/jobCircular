@@ -6,7 +6,7 @@
     <div class="container mt-3">
         <div class="row">
             <div class="col-xl-8 offset-xl-2">
-                <!-- Basic datatable -->
+              	  <!-- Basic datatable -->
                 <div class="card">
                     <div class="card-header header-elements-inline">
                         <h5 class="card-title">All Category List</h5>
@@ -30,8 +30,8 @@
                                         <img style="width: 50px;height:50px" src="{{ asset($Category->image) }}" alt="">
                                     </td>
                                     <td>
-                                        <a href="#" class="btn btn-primary">Edit</a>
-                                        <a href="#" class="btn btn-danger">Trash</a>
+                                        <a href="{{ route('category.edit',$Category->id) }}" class="btn btn-primary">Edit</a>
+                                        <a href="{{ route('category.delete',$Category->id) }}" class="btn btn-danger">Trash</a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -40,7 +40,6 @@
                     </table>
                 </div>
                 <!-- /basic datatable -->
-
             </div>
         </div>
     </div>
