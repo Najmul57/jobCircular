@@ -93,11 +93,23 @@ class CategoryController extends Controller
             'title' => 'required'
         ]);
 
-        Category::findOrFail($id)->update([
-            'title' => $request->title
-        ]);
+        if ($request->hasFile('image')) {
+            $image = $request->image->getClientOriginalName();
+            $request->image->storeAs('image', $image, 'public');
 
-        return redirect()->route('category.index');
+            Category::findOrFail($id)->update([
+                'title' => $request->title,
+                'image' => $image,
+
+            ]);
+            return redirect()->route('category.index');
+        } else {
+            Category::findOrFail($id)->update([
+                'title' => $request->title
+            ]);
+            return redirect()->route('category.index');
+        }
+
     }
 
     /**

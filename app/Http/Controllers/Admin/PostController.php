@@ -102,12 +102,25 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Post::findOrFail($id)->update([
-            'title' => $request->title,
-            'description' => $request->description,
-            'category_id' => $request->category_id,
-        ]);
-        return redirect()->route('post.index');
+
+        if ($request->hasFile('thambnail')) {
+            $thambnail = $request->thambnail->getClientOriginalName();
+            $request->thambnail->storeAs('thambnail', $thambnail, 'public');
+            Post::findOrFail($id)->update([
+                'title' => $request->title,
+                'description' => $request->description,
+                'category_id' => $request->category_id,
+                'thambnail' => $thambnail,
+            ]);
+            return redirect()->route('post.index');
+        } else {
+            Post::findOrFail($id)->update([
+                'title' => $request->title,
+                'description' => $request->description,
+                'category_id' => $request->category_id
+            ]);
+            return redirect()->route('post.index');
+        }
     }
 
     /**
