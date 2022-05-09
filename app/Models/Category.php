@@ -9,7 +9,6 @@ class Category extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'thambnail_image',
-        'title'
+        'title','image'
     ];
 }

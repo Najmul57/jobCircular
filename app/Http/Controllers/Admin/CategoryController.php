@@ -5,99 +5,111 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
-use Intervention\Image\Facades\Image;
 
 class CategoryController extends Controller
 {
-    public function __construct()
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
     {
-        $this->middleware('auth');
+        $category = Category::all();
+        return view('backend.category.show-category', compact('category'));
     }
-    public function admin()
-    {
-        return view('backend.dashboard');
-    }
-    public function categories()
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
         return view('backend.category.add-category');
     }
 
-    public function index()
-    {
-        $Category = Category::all();
-        return view('backend.category.show-category', compact('Category'));
-    }
-
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
-        $this->validate(
-            $request,
-            [
-                'title' => 'required',
-                'image' => 'required'
-            ],
-            [
-                'title.required' => 'Name field is required',
-                'image.required' => 'Image field is required'
-            ]
-        );
-
-        $image = $request->file('image');
-        $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
-        Image::make($image)->resize(300, 300)->save('backend/assets/images/' . $name_gen);
-        $save_url = 'backend/assets/images/' . $name_gen;
-
-        Category::insert([
-            'title' => $request->title,
-            'image' => $save_url
+        $validated = $request->validate([
+            'title' => 'required',
+            'image' => 'required|mimes:png,jpg,jpeg',
         ]);
-        return redirect()->route('category.show');
-    }
-    public function edit($id)
-    {
-        $category = Category::findOrFail($id);
 
-        // return $category;
-        return view('backend.category.edit-category', compact('category'));
-    }
-    public function update(Request $request, $id)
-    {
-        $category = $request->id;
-        $old_image = $request->id;
-
-        if ($request->file('image')) {
-            unlink($old_image);
-            $image = $request->file('image');
-            $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(300, 300)->save('backend/assets/images/' . $name_gen);
-            $save_url = 'backend/assets/images/' . $name_gen;
-
-            Category::findOrFail($category)->update([
+        if ($request->hasFile('image')) {
+            $image = $request->image->getClientOriginalName();
+            $request->image->storeAs('image', $image, 'public');
+            Category::create([
                 'title' => $request->title,
-                'image' => $save_url
+                'image' => $image,
             ]);
-            return redirect()->route('category.show');
+            return back();
         } else {
-            $image = $request->file('image');
-            $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(300, 300)->save('backend/assets/images/' . $name_gen);
-            $save_url = 'backend/assets/images/' . $name_gen;
-
-            Category::findOrFail($category)->update([
-                'title' => $request->title,
-                'image' => $save_url
+            Category::create([
+                'title' => $request->title
             ]);
-            return redirect()->route('category.show');
-
+            return back();
         }
     }
-    public function delete($id)
-    {
-        $category = Category::findOrFail($id);
-        $image = $category->image;
-        unlink($image);
-        Category::findOrFail($id)->delete();
-        return redirect()->route('category.show');
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $category = Category::find($id);
+        return view('backend.category.edit', compact('category'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $validated = $request->validate([
+            'title' => 'required'
+        ]);
+
+        Category::findOrFail($id)->update([
+            'title' => $request->title
+        ]);
+
+        return redirect()->route('category.index');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $category = Category::find($id);
+        $category->delete();
+        return back();
     }
 }

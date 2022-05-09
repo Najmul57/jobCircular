@@ -45,7 +45,7 @@
             <ul class="nav nav-sidebar" data-nav-type="accordion">
                 <!-- Main -->
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link active">
+                    <a href="{{ url('/admin/home') }}" class="nav-link active">
                         <i class="icon-home4"></i>
                         <span>
                             Dashboard
@@ -57,9 +57,8 @@
                     <a href="#" class="nav-link"><i class="icon-copy"></i> <span>Categories</span></a>
 
                     <ul class="nav nav-group-sub" data-submenu-title="Layouts">
-                        <li class="nav-item"><a href="{{ route('category.show') }}" class="nav-link">Show Category</a></li>
-                        <li class="nav-item"><a href="{{ route('categories') }}" class="nav-link">Add Category</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link active">Layout 2</a>
+                        <li class="nav-item"><a href="{{ route('category.index') }}" class="nav-link">Show Category</a></li>
+                        <li class="nav-item"><a href="{{ route('category.create') }}" class="nav-link">Add Category</a></li>
                         </li>
                     </ul>
                 </li>
