@@ -54,11 +54,20 @@
                     </a>
                 </li>
                 <li class="nav-item nav-item-submenu">
-                    <a href="#" class="nav-link"><i class="icon-copy"></i> <span>Categories</span></a>
+                    <a href="#" class="nav-link"><i class="icon-copy"></i> <span>Category</span></a>
 
                     <ul class="nav nav-group-sub" data-submenu-title="Layouts">
                         <li class="nav-item"><a href="{{ route('category.index') }}" class="nav-link">Show Category</a></li>
                         <li class="nav-item"><a href="{{ route('category.create') }}" class="nav-link">Add Category</a></li>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item nav-item-submenu">
+                    <a href="#" class="nav-link"><i class="icon-copy"></i> <span>Post</span></a>
+
+                    <ul class="nav nav-group-sub" data-submenu-title="Layouts">
+                        <li class="nav-item"><a href="{{ route('post.index') }}" class="nav-link">Show Post</a></li>
+                        <li class="nav-item"><a href="{{ route('post.create') }}" class="nav-link">Add Post</a></li>
                         </li>
                     </ul>
                 </li>

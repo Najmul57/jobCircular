@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Post;
+use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $category = Category::all();
-        return view('backend.category.show-category', compact('category'));
+
+        $post = Post::get();
+        // return $post;
+        return view('backend.post.show-post', compact('post'));
     }
 
     /**
@@ -26,7 +29,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('backend.category.add-category');
+        $category = Category::all();
+        return view('backend.post.add-post', compact('category'));
     }
 
     /**
@@ -39,20 +43,26 @@ class CategoryController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required',
-            'image' => 'required|mimes:png,jpg,jpeg',
+            'description' => 'required',
+            'category_id' => 'required',
+            'thambnail' => 'required|mimes:png,jpg,jpeg',
         ]);
 
-        if ($request->hasFile('image')) {
-            $image = $request->image->getClientOriginalName();
-            $request->image->storeAs('image', $image, 'public');
-            Category::create([
+        if ($request->hasFile('thambnail')) {
+            $thambnail = $request->thambnail->getClientOriginalName();
+            $request->thambnail->storeAs('thambnail', $thambnail, 'public');
+            Post::create([
                 'title' => $request->title,
-                'image' => $image,
+                'description' => $request->description,
+                'category_id' => $request->category_id,
+                'thambnail' => $thambnail,
             ]);
             return back();
         } else {
-            Category::create([
-                'title' => $request->title
+            Post::create([
+                'title' => $request->title,
+                'description' => $request->description,
+                'category_id' => $request->category_id
             ]);
             return back();
         }
@@ -66,6 +76,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
+        //
     }
 
     /**
@@ -76,8 +87,10 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::find($id);
-        return view('backend.category.edit-category', compact('category'));
+        $post = post::find($id);
+        $category = Category::all();
+        // return $post;
+        return view('backend.post.edit-post', compact('post', 'category'));
     }
 
     /**
@@ -89,15 +102,12 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validated = $request->validate([
-            'title' => 'required'
+        Post::findOrFail($id)->update([
+            'title' => $request->title,
+            'description' => $request->description,
+            'category_id' => $request->category_id,
         ]);
-
-        Category::findOrFail($id)->update([
-            'title' => $request->title
-        ]);
-
-        return redirect()->route('category.index');
+        return redirect()->route('post.index');
     }
 
     /**
@@ -108,8 +118,8 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $category = Category::find($id);
-        $category->delete();
+        $post = Post::find($id);
+        $post->delete();
         return back();
     }
 }

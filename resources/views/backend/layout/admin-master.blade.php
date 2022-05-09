@@ -20,6 +20,7 @@
     <link href="{{ asset('backend') }}/assets/css/layout.min.css" rel="stylesheet" type="text/css">
     <link href="{{ asset('backend') }}/assets/css/components.min.css" rel="stylesheet" type="text/css">
     <link href="{{ asset('backend') }}/assets/css/colors.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <!-- /global stylesheets -->
 
 </head>
@@ -83,7 +84,25 @@
     <script src="{{ asset('backend') }}/global_assets/js/demo_pages/dashboard.js"></script>
 	<script src="{{ asset('backend') }}/global_assets/js/plugins/tables/datatables/datatables.min.js"></script>
 	<script src="{{ asset('backend') }}/global_assets/js/demo_pages/datatables_basic.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
     <!-- /theme JS files -->
+    <script>
+        $('#summernote').summernote({
+          placeholder: 'Post Description',
+          tabsize: 2,
+        //   height: 120,
+          toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture', 'video']],
+            ['view', ['fullscreen', 'codeview', 'help']]
+          ]
+        });
+      </script>
+
 
 </body>
 
