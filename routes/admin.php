@@ -5,9 +5,16 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\PostController;
 
+Auth::routes();
 
+Route::group(['prefix'=>'admin'],function(){
 
-Route::get('/admin/home', [AdminController::class, 'admin'])->name('admin.home');
+    Route::group(['middleware'=>'auth'],function(){
+        Route::get('home', [AdminController::class, 'admin'])->name('admin.home');
+    });
+
+});
+
 
 Route::resource('category',CategoryController::class);
 

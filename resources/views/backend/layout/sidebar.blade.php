@@ -45,6 +45,14 @@
             <ul class="nav nav-sidebar" data-nav-type="accordion">
                 <!-- Main -->
                 <li class="nav-item">
+                    <a href="{{ url('/') }}" target="_blank" class="nav-link ">
+                        <i class="icon-home4"></i>
+                        <span>
+                            View Site
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ url('/admin/home') }}" class="nav-link active">
                         <i class="icon-home4"></i>
                         <span>
@@ -71,7 +79,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();"><i
                             class="icon-switch2"></i>{{ __('Logout') }}</a>
@@ -79,7 +87,7 @@
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
                     </form>
-                </li>
+                </li> --}}
                 <!-- /main -->
                 <!-- /layout -->
             </ul>

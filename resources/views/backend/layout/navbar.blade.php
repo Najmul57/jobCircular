@@ -122,13 +122,13 @@
                         class="badge badge-pill bg-indigo-400 ml-auto">58</span></a>
                 <div class="dropdown-divider"></div>
                 <a href="#" class="dropdown-item"><i class="icon-cog5"></i> Account settings</a>
-                <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
+                {{-- <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
                     <i class="icon-switch2"></i> {{ __('Logout') }}</a>
 
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
-                </form>
+                </form> --}}
 
             </div>
         </li>
