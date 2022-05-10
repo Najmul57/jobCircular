@@ -21,6 +21,10 @@
     <link href="{{ asset('backend') }}/assets/css/components.min.css" rel="stylesheet" type="text/css">
     <link href="{{ asset('backend') }}/assets/css/colors.min.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+
+
     <!-- /global stylesheets -->
 
 </head>

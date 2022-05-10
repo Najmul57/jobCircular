@@ -39,7 +39,7 @@ class CategoryController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required',
-            'image' => 'required|mimes:png,jpg,jpeg',
+            'image' => 'required|mimes:png,jpg,jpeg,webp',
         ]);
 
         if ($request->hasFile('image')) {
@@ -66,6 +66,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
+
     }
 
     /**

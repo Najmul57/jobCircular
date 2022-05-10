@@ -19,7 +19,7 @@ class PostController extends Controller
 
         $post = Post::get();
         // return $post;
-        return view('backend.post.show-post', compact('post'));
+        return view('backend.post.index', compact('post'));
     }
 
     /**
@@ -45,7 +45,7 @@ class PostController extends Controller
             'title' => 'required',
             'description' => 'required',
             'category_id' => 'required',
-            'thambnail' => 'required|mimes:png,jpg,jpeg',
+            'thambnail' => 'required|mimes:png,jpg,jpeg,webp',
         ]);
 
         if ($request->hasFile('thambnail')) {
@@ -76,7 +76,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::where('id',$id)->first();
+        return view('backend.post.show-post',compact('post'));
     }
 
     /**
