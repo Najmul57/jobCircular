@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\FrontEnd;
 
 use App\Http\Controllers\Controller;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class HomePageController extends Controller
@@ -14,7 +15,9 @@ class HomePageController extends Controller
      */
     public function index()
     {
-        return view('frontend.homePage');
+        $posts = Post::paginate(6);
+        // return $posts;
+        return view('frontend.homePage',compact('posts'));
     }
 
     /**

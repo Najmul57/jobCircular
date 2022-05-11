@@ -4,7 +4,6 @@
 
 @section('content')
 
-
     <section>
         <div class="container mt-2 pt-3">
             <div class="row">
@@ -15,36 +14,14 @@
                             <h6 class="text-uppercase fw-bold text-center mt-2 text-secondary">ফিল্টার : </h6>
                         </div>
                         <div class="list-group mx-0">
+                            @foreach ($categories as $category)
                             <label class="list-group-item d-flex gap-2">
                                 <input class="form-check-input flex-shrink-0" type="checkbox" value="" checked="">
                                 <span>
-                                    সরকারী চাকরী
+                                    {{ $category->title }}
                                 </span>
                             </label>
-                            <label class="list-group-item d-flex gap-2">
-                                <input class="form-check-input flex-shrink-0" type="checkbox" value="" checked="">
-                                <span>
-                                    NGO চাকরী
-                                </span>
-                            </label>
-                            <label class="list-group-item d-flex gap-2">
-                                <input class="form-check-input flex-shrink-0" type="checkbox" value="" checked="">
-                                <span>
-                                    কোম্পানী চাকরী
-                                </span>
-                            </label>
-                            <label class="list-group-item d-flex gap-2">
-                                <input class="form-check-input flex-shrink-0" type="checkbox" value="" checked="">
-                                <span>
-                                    আই.টি চাকরী
-                                </span>
-                            </label>
-                            <label class="list-group-item d-flex gap-2">
-                                <input class="form-check-input flex-shrink-0" type="checkbox" value="" checked="">
-                                <span>
-                                    অনান্য
-                                </span>
-                            </label>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -86,123 +63,24 @@
                     </div>
                     <!-- Filter End -->
                     <div class="row">
-
-                        <div class="col-sm-6 col-md-4 mt-3">
-                            <div class="card">
-                                <img src="{{ asset('frontend') }}/img/tv.jpg" class="card-img-top">
-                                <div class="card-body">
-                                    <a href="single.html"
-                                        class="card-text text-decoration-none fw-bold text-secondary">Lorem ipsum dolor sit
-                                        amet
-                                        consectetur adipisicing elit. Impedit, veritatis.</a>
+                        @foreach ($posts as $post)
+                            <div class="col-sm-6 col-md-4 mt-3">
+                                <div class="card">
+                                    <img src="{{ asset('storage/thambnail/' . $post->thambnail) }}"
+                                        class="card-img-top">
+                                    <div class="card-body">
+                                        <a href="{{ route('singlepost', $post->id) }}" class="card-text text-decoration-none fw-bold text-secondary">
+                                            {{ $post->title }}
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="col-sm-6 col-md-4 mt-3">
-                            <div class="card">
-                                <img src="{{ asset('frontend') }}/img/tv.jpg" class="card-img-top">
-                                <div class="card-body">
-                                    <a href="single.html"
-                                        class="card-text text-decoration-none fw-bold text-secondary">Lorem ipsum dolor sit
-                                        amet
-                                        consectetur adipisicing elit. Impedit, veritatis.</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6 col-md-4 mt-3">
-                            <div class="card">
-                                <img src="{{ asset('frontend') }}/img/tv.jpg" class="card-img-top">
-                                <div class="card-body">
-                                    <a href="single.html"
-                                        class="card-text text-decoration-none fw-bold text-secondary">Lorem ipsum dolor sit
-                                        amet
-                                        consectetur adipisicing elit. Impedit, veritatis.</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6 col-md-4 mt-3">
-                            <div class="card">
-                                <img src="{{ asset('frontend') }}/img/tv.jpg" class="card-img-top">
-                                <div class="card-body">
-                                    <a href="single.html"
-                                        class="card-text text-decoration-none fw-bold text-secondary">Lorem ipsum dolor sit
-                                        amet
-                                        consectetur adipisicing elit. Impedit, veritatis.</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6 col-md-4 mt-3">
-                            <div class="card">
-                                <img src="{{ asset('frontend') }}/img/tv.jpg" class="card-img-top">
-                                <div class="card-body">
-                                    <a href="single.html"
-                                        class="card-text text-decoration-none fw-bold text-secondary">Lorem ipsum dolor sit
-                                        amet
-                                        consectetur adipisicing elit. Impedit, veritatis.</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6 col-md-4 mt-3">
-                            <div class="card">
-                                <img src="{{ asset('frontend') }}/img/tv.jpg" class="card-img-top">
-                                <div class="card-body">
-                                    <a href="single.html"
-                                        class="card-text text-decoration-none fw-bold text-secondary">Lorem ipsum dolor sit
-                                        amet
-                                        consectetur adipisicing elit. Impedit, veritatis.</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6 col-md-4 mt-3">
-                            <div class="card">
-                                <img src="{{ asset('frontend') }}/img/tv.jpg" class="card-img-top">
-                                <div class="card-body">
-                                    <a href="single.html"
-                                        class="card-text text-decoration-none fw-bold text-secondary">Lorem ipsum dolor sit
-                                        amet
-                                        consectetur adipisicing elit. Impedit, veritatis.</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6 col-md-4 mt-3">
-                            <div class="card">
-                                <img src="{{ asset('frontend') }}/img/tv.jpg" class="card-img-top">
-                                <div class="card-body">
-                                    <a href="single.html"
-                                        class="card-text text-decoration-none fw-bold text-secondary">Lorem ipsum dolor sit
-                                        amet
-                                        consectetur adipisicing elit. Impedit, veritatis.</a>
-                                </div>
-                            </div>
-                        </div>
-
-
+                        @endforeach
                     </div>
-                    <!-- Pagination -->
-                    <div class="row my-4">
-                        <nav aria-label="...">
-                            <ul class="pagination justify-content-end">
-                                <li class="page-item disabled">
-                                    <span class="page-link">Previous</span>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item active" aria-current="page">
-                                    <span class="page-link">2</span>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Next</a>
-                                </li>
-                            </ul>
-                        </nav>
+                    <div class="row my-3">
+                        {{ $posts->links() }}
                     </div>
+
                 </div>
             </div>
     </section>

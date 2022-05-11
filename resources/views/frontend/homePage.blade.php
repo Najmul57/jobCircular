@@ -9,117 +9,26 @@
             <div class="row">
                 <div class="col-lg-12 col-12">
                     <div class="row">
+                        @foreach ($posts as $post)
                         <div class="col-sm-6 col-md-4 mt-3">
                             <div class="card">
-                                <img src="{{ asset('frontend') }}/img/tv.jpg" class="card-img-top">
+                                <img src="{{ asset('storage/thambnail/'.$post->thambnail) }}" class="card-img-top">
                                 <div class="card-body">
-                                    <a href="single.html" class="card-text text-decoration-none fw-bold text-secondary">Lorem
-                                        ipsum dolor
-                                        sit amet
-                                        consectetur adipisicing elit. Impedit, veritatis.</a>
+                                    <a href="{{ route('singlepost',$post->id) }}" class="card-text text-decoration-none fw-bold text-secondary">
+                                        {{ $post->title }}
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-md-4 mt-3">
-                            <div class="card">
-                                <img src="{{ asset('frontend') }}/img/tv.jpg" class="card-img-top">
-                                <div class="card-body">
-                                    <a href="single.html"
-                                        class="card-text text-decoration-none fw-bold text-secondary">Lorem ipsum dolor
-                                        sit amet
-                                        consectetur adipisicing elit. Impedit, veritatis.</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 mt-3">
-                            <div class="card">
-                                <img src="{{ asset('frontend') }}/img/tv.jpg" class="card-img-top">
-                                <div class="card-body">
-                                    <a href="single.html"
-                                        class="card-text text-decoration-none fw-bold text-secondary">Lorem ipsum dolor
-                                        sit amet
-                                        consectetur adipisicing elit. Impedit, veritatis.</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 mt-3">
-                            <div class="card">
-                                <img src="{{ asset('frontend') }}/img/tv.jpg" class="card-img-top">
-                                <div class="card-body">
-                                    <a href="single.html"
-                                        class="card-text text-decoration-none fw-bold text-secondary">Lorem ipsum dolor
-                                        sit amet
-                                        consectetur adipisicing elit. Impedit, veritatis.</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 mt-3">
-                            <div class="card">
-                                <img src="{{ asset('frontend') }}/img/tv.jpg" class="card-img-top">
-                                <div class="card-body">
-                                    <a href="single.html"
-                                        class="card-text text-decoration-none fw-bold text-secondary">Lorem ipsum dolor
-                                        sit amet
-                                        consectetur adipisicing elit. Impedit, veritatis.</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 mt-3">
-                            <div class="card">
-                                <img src="{{ asset('frontend') }}/img/tv.jpg" class="card-img-top">
-                                <div class="card-body">
-                                    <a href="single.html"
-                                        class="card-text text-decoration-none fw-bold text-secondary">Lorem ipsum dolor
-                                        sit amet
-                                        consectetur adipisicing elit. Impedit, veritatis.</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 mt-3">
-                            <div class="card">
-                                <img src="{{ asset('frontend') }}/img/tv.jpg" class="card-img-top">
-                                <div class="card-body">
-                                    <a href="single.html"
-                                        class="card-text text-decoration-none fw-bold text-secondary">Lorem ipsum dolor
-                                        sit amet
-                                        consectetur adipisicing elit. Impedit, veritatis.</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 mt-3">
-                            <div class="card">
-                                <img src="{{ asset('frontend') }}/img/tv.jpg" class="card-img-top">
-                                <div class="card-body">
-                                    <a href="single.html"
-                                        class="card-text text-decoration-none fw-bold text-secondary">Lorem ipsum dolor
-                                        sit amet
-                                        consectetur adipisicing elit. Impedit, veritatis.</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 mt-3">
-                            <div class="card">
-                                <img src="{{ asset('frontend') }}/img/tv.jpg" class="card-img-top">
-                                <div class="card-body">
-                                    <a href="single.html"
-                                        class="card-text text-decoration-none fw-bold text-secondary">Lorem ipsum dolor
-                                        sit amet
-                                        consectetur adipisicing elit. Impedit, veritatis.</a>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
+
+
                     </div>
                 </div>
+                <div class="row my-3">
+                    {{ $posts->links() }}
+                </div>
             </div>
-            <nav aria-label="Page navigation example" class="pt-3 d-flex justify-content-end">
-                <ul class="pagination">
-                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                </ul>
-            </nav>
     </section>
 
 

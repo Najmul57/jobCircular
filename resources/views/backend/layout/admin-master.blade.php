@@ -23,7 +23,12 @@
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 
+    <style>
+        .table {
+            min-width: max-content;
+        }
 
+    </style>
 
     <!-- /global stylesheets -->
 
@@ -86,26 +91,26 @@
 
     <script src="{{ asset('backend') }}/assets/js/app.js"></script>
     <script src="{{ asset('backend') }}/global_assets/js/demo_pages/dashboard.js"></script>
-	<script src="{{ asset('backend') }}/global_assets/js/plugins/tables/datatables/datatables.min.js"></script>
-	<script src="{{ asset('backend') }}/global_assets/js/demo_pages/datatables_basic.js"></script>
+    <script src="{{ asset('backend') }}/global_assets/js/plugins/tables/datatables/datatables.min.js"></script>
+    <script src="{{ asset('backend') }}/global_assets/js/demo_pages/datatables_basic.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
     <!-- /theme JS files -->
     <script>
         $('#summernote').summernote({
-          placeholder: 'Post Description',
-          tabsize: 2,
-        //   height: 120,
-          toolbar: [
-            ['style', ['style']],
-            ['font', ['bold', 'underline', 'clear']],
-            ['color', ['color']],
-            ['para', ['ul', 'ol', 'paragraph']],
-            ['table', ['table']],
-            ['insert', ['link', 'picture', 'video']],
-            ['view', ['fullscreen', 'codeview', 'help']]
-          ]
+            placeholder: 'Post Description',
+            tabsize: 2,
+            //   height: 120,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture', 'video']],
+                ['view', ['fullscreen', 'codeview', 'help']]
+            ]
         });
-      </script>
+    </script>
 
 
 </body>

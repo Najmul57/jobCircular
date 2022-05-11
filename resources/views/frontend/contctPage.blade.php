@@ -3,6 +3,7 @@
 @section('title', 'Contact Page');
 
 @section('content')
+
     <div class="main-content py-5">
         <div class="container">
             <div class="row">
@@ -40,4 +41,5 @@
             </div>
         </div>
     </div>
+
 @endsection

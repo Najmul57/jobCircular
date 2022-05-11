@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\FrontEnd;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostPageController extends Controller
@@ -14,7 +16,10 @@ class PostPageController extends Controller
      */
     public function index()
     {
-       return view('frontend.postPage');
+        $posts = Post::paginate(6);
+        $categories=Category::get();
+        // return $categories;
+        return view('frontend.postPage',compact('posts','categories'));
     }
 
     /**
