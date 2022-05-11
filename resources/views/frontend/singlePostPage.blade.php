@@ -11,7 +11,7 @@
                     <div class="blog-details">
                         <h5>{{ $post->title }}</h5>
                         <br>
-                        <img class="w-100" src="{{ asset('storage/thambnail/'.$post->thambnail) }}" alt="">
+                        <img class="w-100" src="{{ asset('storage/thumbnail/' . $post->thumbnail) }}" alt="">
                         <div class="post-author d-flex justify-content-between align-items-center">
                             <div class="blog-author py-3">
                                 <span><strong><i class="fa fa-user"></i> Najmul</strong></span> |
@@ -30,10 +30,6 @@
                         {!! $post->description !!}
 
                     </div>
-
-
-
-
                 </div>
                 <div class="col-md-4">
                     <aside>
@@ -42,12 +38,13 @@
                             <div class="card mb-4">
                                 <div class="list-group mx-0">
                                     @foreach ($categories as $category)
-                                    <label class="list-group-item d-flex gap-2">
-                                        <input class="form-check-input flex-shrink-0" type="checkbox" value="" checked="">
-                                        <span>
-                                            {{ $category->title }}
-                                        </span>
-                                    </label>
+                                        <label class="list-group-item d-flex gap-2">
+                                            <input class="form-check-input flex-shrink-0" type="checkbox" value=""
+                                                checked="">
+                                            <span>
+                                                {{ $category->title }}
+                                            </span>
+                                        </label>
                                     @endforeach
                                 </div>
                             </div>

@@ -1,3 +1,6 @@
+@php
+    $categories = App\Models\Category::get();
+@endphp
 <header class="container-fluid border-bottom sticky-top bg-body">
     <div class="container bg-body">
         <nav class="navbar navbar-expand-lg navbar-light">
@@ -15,12 +18,11 @@
                         <li class="nav-item">
                             <a class="nav-link fw-bold " aria-current="page" href="{{ url('/') }}">Home</a>
                         </li>
+                        @foreach ($categories as $category )
                         <li class="nav-item">
-                            <a class="nav-link fw-bold" href="{{ route('job.index') }}">Post</a>
+                            <a class="nav-link fw-bold" href="{{ route('categorypost', $category->id) }}">{{ $category->title }}</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link fw-bold" href="{{ route('contact.index') }}">Contact</a>
-                        </li>
+                        @endforeach
                     </ul>
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

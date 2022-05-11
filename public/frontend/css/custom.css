@@ -3,6 +3,15 @@ aside {
     top: 100px;
 }
 
+.card.mb-4 {
+    position: sticky;
+    top: 100px;
+}
+
+.card-img-top {
+    height: 250px;
+}
+
 .list-group a {
     text-decoration: none;
     color: #000;
@@ -50,9 +59,32 @@ aside {
     font-weight: 500;
     font-size: 16px;
 }
+
 .blog-share a {
     margin-left: 10px;
 }
+
 footer {
     border-top: 1px solid #ddd;
+}
+
+
+
+.breadcrumb-area {
+    margin: 0;
+    padding: 20px 0;
+    background: #00ff93;
+}
+
+.breadcrumb {
+    margin: 0;
+    justify-content: center;
+}
+
+.breadcrumb-item {
+    font-size: 18px;
+}
+
+.breadcrumb-item a {
+    text-decoration: none;
 }

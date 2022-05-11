@@ -15,7 +15,7 @@ class HomePageController extends Controller
      */
     public function index()
     {
-        $posts = Post::paginate(6);
+        $posts = Post::paginate(12);
         // return $posts;
         return view('frontend.homePage',compact('posts'));
     }

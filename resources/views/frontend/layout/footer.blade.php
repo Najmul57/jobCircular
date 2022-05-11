@@ -16,9 +16,9 @@
                 <div class="footer-widget">
                     <h5 style="text-transform: uppercase;">usefull links</h5>
                     <ul>
-                        <li><a href="#">home</a></li>
+                        <li><a href="{{ url('/') }}">home</a></li>
                         <li><a href="#">about</a></li>
-                        <li><a href="#">contact</a></li>
+                        <li><a href="{{ route('contact.index') }}">contact</a></li>
                     </ul>
                 </div>
             </div>

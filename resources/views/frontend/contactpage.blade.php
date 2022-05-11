@@ -1,6 +1,6 @@
 @extends('frontend.layout.app')
 
-@section('title', 'Contact Page');
+@section('title', 'Contact Page')
 
 @section('content')
 

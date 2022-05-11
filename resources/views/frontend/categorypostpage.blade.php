@@ -1,32 +1,32 @@
 @extends('frontend.layout.app')
 
-@section('title', 'Post Page')
+@section('title', 'Home Page')
 
 @section('content')
+    <div class="breadcrumb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
+
+                            <li class="breadcrumb-item active" aria-current="page">Library</li>
+
+                        </ol>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+    </div>
 
     <section>
         <div class="container mt-2 pt-3">
             <div class="row">
                 <!-- Sidebar Start -->
-                <div class="col-lg-3 d-none d-lg-block bg-light mt-3">
-                    <div class="card mb-4 ">
-                        <div class="card-header ">
-                            <h6 class="text-uppercase fw-bold text-center mt-2 text-secondary">ফিল্টার : </h6>
-                        </div>
-                        <div class="list-group mx-0">
-                            @foreach ($categories as $category)
-                            <label class="list-group-item d-flex gap-2">
-                                <input class="form-check-input flex-shrink-0" type="checkbox" value="" checked="">
-                                <span>
-                                    {{ $category->title }}
-                                </span>
-                            </label>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
                 <!-- Sidebar End -->
-                <div class="col-lg-9 col-12">
+                <div class="col-lg-12 col-12">
                     <!-- Filter Start -->
                     <div class="row">
                         <div class="d-flex justify-content-between">
@@ -52,8 +52,7 @@
                                         <option value="2">30</option>
                                         <option value="3">40</option>
                                     </select>
-                                    <img style="margin: 0 5px;" src="{{ asset('frontend') }}/icon/list-ul.svg"
-                                        alt="Kiwi standing on oval">
+                                    <img style="margin: 0 5px;" src="{{ asset('frontend') }}/icon/list-ul.svg" alt="Kiwi standing on oval">
                                     <img style="margin: 0 5px;" src="{{ asset('frontend') }}/icon/grid-3x3-gap-fill.svg"
                                         alt="Kiwi standing on oval">
                                 </div>
@@ -63,26 +62,29 @@
                     </div>
                     <!-- Filter End -->
                     <div class="row">
+
                         @foreach ($posts as $post)
-                            <div class="col-sm-6 col-md-4 mt-3">
-                                <div class="card">
-                                    <img src="{{ asset('storage/thumbnail/' . $post->thumbnail) }}"
-                                        class="card-img-top">
-                                    <div class="card-body">
-                                        <a href="{{ route('singlepost', $post->id) }}" class="card-text text-decoration-none fw-bold text-secondary">
-                                            {{ $post->title }}
-                                        </a>
-                                    </div>
+                        <div class="col-sm-6 col-md-4 mt-3">
+                            <div class="card">
+                                <img src="{{ asset('storage/thumbnail/'.$post->thumbnail) }}" class="card-img-top">
+                                <div class="card-body">
+                                    <a href="{{ route('singlepost', $post->id) }}"
+                                        class="card-text text-decoration-none fw-bold text-secondary">
+                                        {{ $post->title }}
+                                    </a>
                                 </div>
                             </div>
+                        </div>
+
                         @endforeach
                     </div>
+                    <!-- Pagination -->
                     <div class="row my-3">
                         {{ $posts->links() }}
                     </div>
-
                 </div>
             </div>
     </section>
+    <!-- Sidebar End  -->
 
 @endsection

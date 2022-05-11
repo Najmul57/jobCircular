@@ -9,7 +9,7 @@
             <div class="col-sm-12">
                 <div class="show-post-page">
                     <h2>{{ $post->title }}</h2>
-                    <img style="width: 100%;" src="{{ asset('storage/thambnail/' . $post->thambnail) }}"
+                    <img style="width: 100%;" src="{{ asset('storage/thumbnail/' . $post->thumbnail) }}"
                                             alt="">
                     <p>{!!$post->description !!}</p>
                 </div>

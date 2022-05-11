@@ -16,7 +16,7 @@ class CategoryController extends Controller
     public function index()
     {
         $category = Category::all();
-        return view('backend.category.show-category', compact('category'));
+        return view('backend.category.show_category', compact('category'));
     }
 
     /**
@@ -26,7 +26,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('backend.category.add-category');
+        return view('backend.category.add_category');
     }
 
     /**
@@ -78,7 +78,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category = Category::find($id);
-        return view('backend.category.edit-category', compact('category'));
+        return view('backend.category.edit_category', compact('category'));
     }
 
     /**
@@ -101,7 +101,6 @@ class CategoryController extends Controller
             Category::findOrFail($id)->update([
                 'title' => $request->title,
                 'image' => $image,
-
             ]);
             return redirect()->route('category.index');
         } else {
@@ -110,7 +109,6 @@ class CategoryController extends Controller
             ]);
             return redirect()->route('category.index');
         }
-
     }
 
     /**

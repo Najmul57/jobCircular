@@ -1,4 +1,4 @@
-@extends('frontend.layout.app');
+@extends('frontend.layout.app')
 
 @section('title', 'Home Page')
 
@@ -12,7 +12,7 @@
                         @foreach ($posts as $post)
                         <div class="col-sm-6 col-md-4 mt-3">
                             <div class="card">
-                                <img src="{{ asset('storage/thambnail/'.$post->thambnail) }}" class="card-img-top">
+                                <img src="{{ asset('storage/thumbnail/'.$post->thumbnail) }}" class="card-img-top">
                                 <div class="card-body">
                                     <a href="{{ route('singlepost',$post->id) }}" class="card-text text-decoration-none fw-bold text-secondary">
                                         {{ $post->title }}
@@ -21,8 +21,6 @@
                             </div>
                         </div>
                         @endforeach
-
-
                     </div>
                 </div>
                 <div class="row my-3">
@@ -30,6 +28,5 @@
                 </div>
             </div>
     </section>
-
 
 @endsection

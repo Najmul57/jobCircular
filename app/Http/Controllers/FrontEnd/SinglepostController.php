@@ -7,7 +7,7 @@ use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
-class SinglepostController extends Controller
+class SinglePostController extends Controller
 {
     public function index($id)
     {

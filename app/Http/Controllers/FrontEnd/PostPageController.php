@@ -16,7 +16,7 @@ class PostPageController extends Controller
      */
     public function index()
     {
-        $posts = Post::paginate(6);
+        $posts = Post::paginate(12);
         $categories=Category::get();
         // return $categories;
         return view('frontend.postPage',compact('posts','categories'));

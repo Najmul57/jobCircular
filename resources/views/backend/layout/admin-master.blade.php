@@ -45,7 +45,7 @@
 
 
         <!-- Mobile controls -->
-        @include('backend.layout.mobile-menu')
+        @include('backend.layout.mobile_menu')
         <!-- /mobile controls -->
 
 

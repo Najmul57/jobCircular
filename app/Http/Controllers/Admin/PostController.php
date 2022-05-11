@@ -18,7 +18,6 @@ class PostController extends Controller
     {
 
         $post = Post::get();
-        // return $post;
         return view('backend.post.index', compact('post'));
     }
 
@@ -30,7 +29,7 @@ class PostController extends Controller
     public function create()
     {
         $category = Category::all();
-        return view('backend.post.add-post', compact('category'));
+        return view('backend.post.add_post', compact('category'));
     }
 
     /**
@@ -45,17 +44,17 @@ class PostController extends Controller
             'title' => 'required',
             'description' => 'required',
             'category_id' => 'required',
-            'thambnail' => 'required|mimes:png,jpg,jpeg,webp',
+            'thumbnail' => 'required|mimes:png,jpg,jpeg,webp',
         ]);
 
-        if ($request->hasFile('thambnail')) {
-            $thambnail = $request->thambnail->getClientOriginalName();
-            $request->thambnail->storeAs('thambnail', $thambnail, 'public');
+        if ($request->hasFile('thumbnail')) {
+            $thumbnail = $request->thumbnail->getClientOriginalName();
+            $request->thumbnail->storeAs('thumbnail', $thumbnail, 'public');
             Post::create([
                 'title' => $request->title,
                 'description' => $request->description,
                 'category_id' => $request->category_id,
-                'thambnail' => $thambnail,
+                'thumbnail' => $thumbnail,
             ]);
             return back();
         } else {
@@ -77,7 +76,7 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::where('id',$id)->first();
-        return view('backend.post.show-post',compact('post'));
+        return view('backend.post.show_post',compact('post'));
     }
 
     /**
@@ -91,7 +90,7 @@ class PostController extends Controller
         $post = post::find($id);
         $category = Category::all();
         // return $post;
-        return view('backend.post.edit-post', compact('post', 'category'));
+        return view('backend.post.edit_post', compact('post', 'category'));
     }
 
     /**
@@ -104,14 +103,14 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
 
-        if ($request->hasFile('thambnail')) {
-            $thambnail = $request->thambnail->getClientOriginalName();
-            $request->thambnail->storeAs('thambnail', $thambnail, 'public');
+        if ($request->hasFile('thumbnail')) {
+            $thumbnail = $request->thambnail->getClientOriginalName();
+            $request->thumbnail->storeAs('thumbnail', $thumbnail, 'public');
             Post::findOrFail($id)->update([
                 'title' => $request->title,
                 'description' => $request->description,
                 'category_id' => $request->category_id,
-                'thambnail' => $thambnail,
+                'thumbnail' => $thumbnail,
             ]);
             return redirect()->route('post.index');
         } else {

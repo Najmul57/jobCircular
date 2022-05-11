@@ -47,9 +47,9 @@
                             <div class="form-group row">
                                 <label class="col-form-label col-lg-3">Post Image</label>
                                 <div class="col-lg-9">
-                                    <input type="file" name="thambnail"
-                                        class="form-control @error('thambnail') is-invalid @enderror ">
-                                    @error('thambnail')
+                                    <input type="file" name="thumbnail"
+                                        class="form-control @error('thumbnail') is-invalid @enderror ">
+                                    @error('thumbnail')
                                         <span style="color: red"> <strong>{{ $message }}</strong></span>
                                     @enderror
                                 </div>
