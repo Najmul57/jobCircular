@@ -9,7 +9,8 @@ aside {
 }
 
 .card-img-top {
-    height: 250px;
+    height: 200px;
+    object-fit: fill;
 }
 
 .list-group a {
@@ -68,17 +69,39 @@ footer {
     border-top: 1px solid #ddd;
 }
 
-
-
-.breadcrumb-area {
-    margin: 0;
-    padding: 20px 0;
-    background: #00ff93;
+ol.breadcrumb .breadcrumb-item {
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    border-radius: 3px;
+    /* clip-path: polygon(35% 0, 60% 50%, 35% 100%, 0% 100%, 25% 50%, 0% 0%); */
 }
 
 .breadcrumb {
+    background: #f2f2f2;
+    padding: 8px 0;
+    margin-top: 15px;
+}
+
+.blog-details {
+    text-align: justify;
+}
+
+.bg-body p {
     margin: 0;
-    justify-content: center;
+    padding: 10px;
+}
+
+.breadcrumb {
+	margin: 0;
+	/* justify-content: center; */
+	display: flex;
+	align-items: center;
+}
+
+.breadcrumb li {
+	padding: 0 5px;
+	margin: 0px 3px;
+	font-size: 12px;
 }
 
 .breadcrumb-item {
@@ -88,5 +111,3 @@ footer {
 .breadcrumb-item a {
     text-decoration: none;
 }
-
-

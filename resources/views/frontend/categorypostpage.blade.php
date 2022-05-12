@@ -9,10 +9,9 @@
                 <div class="col-sm-12">
                     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
-
-                            <li class="breadcrumb-item " aria-current="page">Category</li>
-                            <li class="breadcrumb-item active" aria-current="page">{{ $category->title }}</li>
+                            <li><a href="{{ url('/') }}"><i class="fa fa-home"></i></a></li> >
+                            <li  aria-current="page">Category</li> >
+                            <li aria-current="page">{{ $category->title }}</li>
                         </ol>
                     </nav>
                 </div>

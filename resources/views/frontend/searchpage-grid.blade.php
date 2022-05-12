@@ -92,7 +92,7 @@
                                 </div>
                             </div>
 
-                            @if (isset($_GET['keyword']))
+                            @if (isset($_GET['keyword']) )
                                 <div class="bg-body mt-3">
                                     <p><strong>Your are Searching: </strong> {{ $_GET['keyword'] }}</p>
                                 </div>

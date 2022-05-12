@@ -11,7 +11,7 @@ class SinglePostController extends Controller
 {
     public function index($id)
     {
-        $post = Post::firstWhere('id',$id);
+        $post = Post::with('category')->firstWhere('id',$id);
         $categories=Category::get();
         // return $post;
 
