@@ -24,8 +24,8 @@
                         </li>
                         @endforeach
                     </ul>
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <form action="{{ route('search.page') }}" method="GET" class="d-flex">
+                        <input name="keyword" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit"><i class="fa fa-search"></i></button>
                     </form>
                 </div>

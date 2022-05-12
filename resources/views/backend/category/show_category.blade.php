@@ -26,7 +26,6 @@
                                     <tr>
                                         <td>{{ $key + 1 }}</td>
                                         <td>{{ $category->title }}</td>
-                                        {{-- <td>{{ $category->image }}</td> --}}
                                         <td>
                                             <img style="width: 50px;" src="{{ asset('storage/image/' . $category->image) }}"
                                                 alt="">
