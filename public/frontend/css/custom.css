@@ -109,6 +109,7 @@ ol.breadcrumb .breadcrumb-item {
     padding: 10px;
 }
 
+
 .breadcrumb {
     margin: 0;
     /* justify-content: center; */
@@ -120,6 +121,7 @@ ol.breadcrumb .breadcrumb-item {
     padding: 0 5px;
     margin: 0px 3px;
     font-size: 12px;
+    font-weight: 500;
 }
 
 .breadcrumb-item {

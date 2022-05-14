@@ -15,6 +15,7 @@
                             <div class="card-body">
                                 <img class="w-100" src="{{ asset('storage/thumbnail/' . $post->thumbnail) }}"
                                     alt="">
+
                                 <div class="post-author d-flex justify-content-between align-items-center">
                                     <div class="blog-author py-3">
                                         <span><strong><i class="fa fa-user"></i> Najmul</strong></span> |
@@ -23,14 +24,15 @@
                                         <span><strong><i class="fa-solid fa-clock"></i> May 7, 2022</strong></span>
                                     </div>
                                     <div class="blog-share d-flex justify-content-end">
-                                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-                                        <a href="#"> <i class="fa-brands fa-pinterest"></i></a>
-                                        <a href="#"> <i class="fa-brands fa-instagram"></i></a>
-                                        <a href="#"> <i class="fa-brands fa-twitter"></i></a>
+                                        <a href="#"><i style="color: #1877f2" class="fa-brands fa-facebook-f"></i></a>
+                                        <a href="#"><i  style="color: #25d366" class="fa-brands fa-whatsapp"></i></a>
+                                        <a href="#"> <i style="color: #bd081c" class="fa-brands fa-pinterest"></i></a>
+                                        <a href="#"> <i style="color: #c32aa3" class="fa-brands fa-instagram"></i></a>
+                                        <a href="#"> <i style="color: #1da1f2" class="fa-brands fa-twitter"></i></a>
                                     </div>
                                 </div>
-                                <h5>{{ $post->title }}</h5>
+                                <hr>
+                                <h5><strong>{{ $post->title }}</strong></h5>
                                 {!! $post->description !!}
                             </div>
                         </div>

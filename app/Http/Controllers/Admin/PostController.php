@@ -42,10 +42,13 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+    //    return $request->all();
         $validated = $request->validate([
             'title' => 'required',
             'description' => 'required',
             'category_id' => 'required',
+            'select_token_generatin' => 'required',
+            'post_desc' => 'required',
             'thumbnail' => 'required|mimes:png,jpg,jpeg,webp',
         ]);
 
@@ -57,6 +60,8 @@ class PostController extends Controller
                 'slug' => make_slug($request->title),
                 'description' => $request->description,
                 'category_id' => $request->category_id,
+                'meta_keyword' => json_encode( $request->select_token_generatin, JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES),
+                'meta_description' => $request->post_desc,
                 'thumbnail' => $thumbnail,
                 'user_id' => Auth::user()->id
             ]);
@@ -67,6 +72,8 @@ class PostController extends Controller
                 'slug' => make_slug($request->title),
                 'description' => $request->description,
                 'category_id' => $request->category_id,
+                'meta_keyword' => json_encode( $request->select_token_generatin, JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES),
+                'meta_description' => $request->post_desc,
                 'user_id' => Auth::user()->id
             ]);
             return back();

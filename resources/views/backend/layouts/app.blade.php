@@ -94,6 +94,8 @@
     <script src="{{ asset('backend') }}/global_assets/js/plugins/tables/datatables/datatables.min.js"></script>
     <script src="{{ asset('backend') }}/global_assets/js/demo_pages/datatables_basic.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+	<script src="{{ asset('backend') }}/global_assets/js/plugins/forms/selects/select2.min.js"></script>
+	<script src="{{ asset('backend') }}/global_assets/js/demo_pages/form_select2.js"></script>
     <!-- /theme JS files -->
     <script>
         $('#summernote').summernote({
