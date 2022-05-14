@@ -1,6 +1,6 @@
-@extends('backend.layout.admin-master')
+@extends('backend.layouts.app')
 
-@section('title', 'Post Page');
+@section('title', 'Post Page')
 
 
 @section('content')

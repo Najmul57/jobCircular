@@ -1,4 +1,4 @@
-@extends('backend.layout.admin-master')
+@extends('backend.layouts.app')
 
 @section('title', 'Category Page');
 

@@ -40,17 +40,17 @@
     <div class="navbar navbar-expand-md navbar-light">
 
         <!-- Header with logos -->
-        @include('backend.layout.logo')
+        @include('backend.layouts.logo')
         <!-- /header with logos -->
 
 
         <!-- Mobile controls -->
-        @include('backend.layout.mobile_menu')
+        @include('backend.layouts.mobile_menu')
         <!-- /mobile controls -->
 
 
         <!-- Navbar content -->
-        @include('backend.layout.navbar')
+        @include('backend.layouts.navbar')
         <!-- /navbar content -->
 
     </div>
@@ -61,7 +61,7 @@
     <div class="page-content">
 
         <!-- Main sidebar -->
-        @include('backend.layout.sidebar')
+        @include('backend.layouts.sidebar')
         <!-- /main sidebar -->
 
 

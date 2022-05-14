@@ -1,3 +1,5 @@
+
+
 <div class="sidebar sidebar-dark sidebar-main sidebar-expand-md">
 
     <!-- Sidebar mobile toggler -->
@@ -20,15 +22,18 @@
             <div class="card-body">
                 <div class="media">
                     <div class="mr-3">
-                        <a href="#"><img
+                        <a href="#">
+                            <img
                                 src="{{ asset('backend') }}/global_assets/images/placeholders/placeholder.jpg"
-                                width="38" height="38" class="rounded-circle" alt=""></a>
+                                width="38" height="38" class="rounded-circle" alt="">
+                                {{-- {{ Auth::user()->name }} --}}
+                            </a>
                     </div>
 
                     <div class="media-body">
-                        <div class="media-title font-weight-semibold">Victoria Baker</div>
+                        <div class="media-title font-weight-semibold">{{ Auth::user()->name }}</div>
                         <div class="font-size-xs opacity-50">
-                            <i class="icon-pin font-size-sm"></i> &nbsp;Santa Ana, CA
+                            <i class="icon-envelope font-size-sm"></i> &nbsp; {{ Auth::user()->email }}
                         </div>
                     </div>
 
@@ -46,7 +51,7 @@
                 <!-- Main -->
                 <li class="nav-item">
                     <a href="{{ url('/') }}" target="_blank" class="nav-link ">
-                        <i class="icon-home4"></i>
+                        <i class="fa-solid fa-cheese"></i>
                         <span>
                             View Site
                         </span>
@@ -57,12 +62,12 @@
                         <i class="icon-home4"></i>
                         <span>
                             Dashboard
-                            <span class="d-block font-weight-normal opacity-50">No active orders</span>
+                            {{-- <span class="d-block font-weight-normal opacity-50">No active orders</span> --}}
                         </span>
                     </a>
                 </li>
                 <li class="nav-item nav-item-submenu">
-                    <a href="#" class="nav-link"><i class="icon-copy"></i> <span>Category</span></a>
+                    <a href="#" class="nav-link"><i class="icon-stack"></i> <span>Category</span></a>
 
                     <ul class="nav nav-group-sub" data-submenu-title="Layouts">
                         <li class="nav-item"><a href="{{ route('category.index') }}" class="nav-link">Show Category</a></li>
@@ -79,7 +84,7 @@
                         </li>
                     </ul>
                 </li>
-                {{-- <li class="nav-item">
+                <li class="nav-item">
                     <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();"><i
                             class="icon-switch2"></i>{{ __('Logout') }}</a>
@@ -87,7 +92,7 @@
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
                     </form>
-                </li> --}}
+                </li>
                 <!-- /main -->
                 <!-- /layout -->
             </ul>

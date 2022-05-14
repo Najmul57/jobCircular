@@ -1,4 +1,4 @@
-@extends('frontend.layout.app')
+@extends('frontend.layouts.app')
 
 @section('title', 'Search Page')
 
@@ -90,6 +90,7 @@
                         @endif
 
                         <!-- Filter End -->
+
 
                         <div class="row">
                             @foreach ($posts as $post)

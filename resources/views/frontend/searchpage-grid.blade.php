@@ -1,4 +1,4 @@
-@extends('frontend.layout.app')
+@extends('frontend.layouts.app')
 
 @section('title', 'Post Page')
 
@@ -78,17 +78,6 @@
                                                 alt="Kiwi standing on oval">
                                         </label>
                                     </div>
-
-                                    {{-- <div>
-                                            <label for="test">
-                                                <img style="margin: 0 5px;" src="{{ asset('frontend') }}/icon/list-ul.svg"
-                                            alt="Kiwi standing on oval">
-                                            </label>
-                                            <input type="hidden" id="test">
-                                        </div>
-                                        <img style="margin: 0 5px;"
-                                            src="{{ asset('frontend') }}/icon/grid-3x3-gap-fill.svg"
-                                            alt="Kiwi standing on oval"> --}}
                                 </div>
                             </div>
 

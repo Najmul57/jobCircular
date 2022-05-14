@@ -16,7 +16,7 @@
 
 <body class="bg-light">
     <!-- header Start -->
-    @include('frontend.layout.header')
+    @include('frontend.layouts.header')
     <!-- header End -->
 
     <!-- content End -->
@@ -24,7 +24,7 @@
     <!-- content End -->
 
     <!-- footer End -->
-    @include('frontend.layout.footer')
+    @include('frontend.layouts.footer')
     <!-- footer End -->
 
     <script src="{{ asset('frontend') }}/js/bootstrap.js"></script>
