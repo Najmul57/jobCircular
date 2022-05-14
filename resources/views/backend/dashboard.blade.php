@@ -21,52 +21,25 @@
                     <!-- Quick stats boxes -->
                     <div class="row">
                         <div class="col-lg-4">
-
                             <!-- Members online -->
                             <div class="card bg-teal-400">
                                 <div class="card-body">
                                     <div class="d-flex">
                                         <h3 class="font-weight-semibold mb-0">{{ $totalUsers }}</h3>
-                                        {{-- <span class="badge bg-teal-800 badge-pill align-self-center ml-auto">+53,6%</span> --}}
                                     </div>
 
                                     <div>
                                         Total Users
-                                        {{-- <div class="font-size-sm opacity-75">489 avg</div> --}}
                                     </div>
                                 </div>
-
                                 <div class="container-fluid">
                                     <div id="members-online"></div>
                                 </div>
                             </div>
                             <!-- /members online -->
-
                         </div>
 
                         <div class="col-lg-4">
-
-                            <!-- Current server load -->
-                            <div class="card bg-pink-400">
-                                <div class="card-body">
-                                    <div class="d-flex">
-                                        <h3 class="font-weight-semibold mb-0">{{ $totalPosts }}</h3>
-                                    </div>
-
-                                    <div>
-                                        Total Categories
-                                        {{-- <div class="font-size-sm opacity-75">34.6% avg</div> --}}
-                                    </div>
-                                </div>
-
-                                <div id="server-load"></div>
-                            </div>
-                            <!-- /current server load -->
-
-                        </div>
-
-                        <div class="col-lg-4">
-
                             <!-- Today's revenue -->
                             <div class="card bg-blue-400">
                                 <div class="card-body">
@@ -78,14 +51,29 @@
                                     </div>
 
                                     <div>
-                                        Total Posts
+                                        Total Categories
                                     </div>
                                 </div>
-
                                 <div id="today-revenue"></div>
                             </div>
                             <!-- /today's revenue -->
+                        </div>
 
+                        <div class="col-lg-4">
+                            <!-- Current server load -->
+                            <div class="card bg-pink-400">
+                                <div class="card-body">
+                                    <div class="d-flex">
+                                        <h3 class="font-weight-semibold mb-0">{{ $totalPosts }}</h3>
+                                    </div>
+
+                                    <div>
+                                        Total Posts
+                                    </div>
+                                </div>
+                                <div id="server-load"></div>
+                            </div>
+                            <!-- /current server load -->
                         </div>
                     </div>
                     <!-- /quick stats boxes -->

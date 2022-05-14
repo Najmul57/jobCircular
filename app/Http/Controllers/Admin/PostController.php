@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class PostController extends Controller
 {
@@ -52,16 +54,20 @@ class PostController extends Controller
             $request->thumbnail->storeAs('thumbnail', $thumbnail, 'public');
             Post::create([
                 'title' => $request->title,
+                'slug' => make_slug($request->title),
                 'description' => $request->description,
                 'category_id' => $request->category_id,
                 'thumbnail' => $thumbnail,
+                'user_id' => Auth::user()->id
             ]);
             return back();
         } else {
             Post::create([
                 'title' => $request->title,
+                'slug' => make_slug($request->title),
                 'description' => $request->description,
-                'category_id' => $request->category_id
+                'category_id' => $request->category_id,
+                'user_id' => Auth::user()->id
             ]);
             return back();
         }
@@ -75,8 +81,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        $post = Post::where('id',$id)->first();
-        return view('backend.post.show_post',compact('post'));
+        $post = Post::where('id', $id)->first();
+        return view('backend.post.show_post', compact('post'));
     }
 
     /**

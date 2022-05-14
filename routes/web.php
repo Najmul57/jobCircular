@@ -12,9 +12,9 @@ use App\Http\Controllers\FrontEnd\SinglepostController;
 Route::get('/', [HomePageController::class, 'index']);
 Route::get('/contact', [ContactPageController::class, 'index'])->name('contact.index');
 
-Route::get('post/{id}', [SinglepostController::class, 'index'])->name('singlepost');
+Route::get('post/{slug}', [SinglepostController::class, 'index'])->name('singlepost');
 
-Route::get('category/{id}', [CategorypostController::class, 'index'])->name('categorypost');
+Route::get('category/{slug}', [CategorypostController::class, 'index'])->name('categorypost');
 
 
 Route::get('/post', [PostPageController::class, 'index'])->name('job.index');

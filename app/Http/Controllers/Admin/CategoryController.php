@@ -47,12 +47,14 @@ class CategoryController extends Controller
             $request->image->storeAs('image', $image, 'public');
             Category::create([
                 'title' => $request->title,
+                'slug' => make_slug($request->title),
                 'image' => $image,
             ]);
             return back();
         } else {
             Category::create([
-                'title' => $request->title
+                'title' => $request->title,
+                'slug' => make_slug($request->title),
             ]);
             return back();
         }
@@ -66,7 +68,6 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-
     }
 
     /**

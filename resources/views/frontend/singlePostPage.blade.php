@@ -24,7 +24,8 @@
                                     </div>
                                     <div class="blog-share d-flex justify-content-end">
                                         <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                                        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                                        <a href="#"> <i class="fa-brands fa-pinterest"></i></a>
                                         <a href="#"> <i class="fa-brands fa-instagram"></i></a>
                                         <a href="#"> <i class="fa-brands fa-twitter"></i></a>
                                     </div>
@@ -44,7 +45,7 @@
                                 </div>
                                 <div class="list-group">
                                     @foreach ($categories as $category)
-                                        <a href="{{ route('categorypost', $category->id) }}"
+                                        <a href="{{ route('categorypost', $category->slug) }}"
                                             class="list-group-item list-group-item-action list-group-item-light">{{ $category->title }}</a>
                                     @endforeach
                                 </div>
@@ -62,6 +63,7 @@
                         </div>
                     </aside>
                 </div>
+                <img src="{{ asset('frontend') }}/img/horizantal-banner.jpg" alt="" style="height: 150px;margin-top:10px">
             </div>
         </div>
     </div>

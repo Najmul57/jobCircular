@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
-use Intervention\Image\Facades\Image;
 use App\Models\User;
 use App\Models\Post;
 
@@ -22,6 +21,6 @@ class AdminController extends Controller
         $totalCategories = Category::count();
 
 
-        return view('backend.dashboard',compact('totalUsers','totalPosts','totalCategories'));
+        return view('backend.dashboard', compact('totalUsers', 'totalPosts', 'totalCategories'));
     }
 }

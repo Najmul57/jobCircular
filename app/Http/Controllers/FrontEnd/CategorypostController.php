@@ -9,32 +9,33 @@ use Illuminate\Http\Request;
 
 class CategorypostController extends Controller
 {
-    public function index($id)
+    public function index($slug)
     {
+        $category = Category::firstWhere('slug', $slug);
 
-        $category = Category::firstWhere('id',$id);
+        // return $category;
 
         $sort = null;
-        if(isset($_GET['sort'])){
+        if (isset($_GET['sort'])) {
             $sort = $_GET['sort'];
         }
 
         $count = null;
-        if(isset($_GET['count'])){
+        if (isset($_GET['count'])) {
             $count = $_GET['count'];
         }
 
         // return $count;
 
-        $posts = Post::where('category_id', $id)
-        ->when($sort, function ($query, $sort) {
-            return $query->orderBy('id', $sort);
-        })
-        ->paginate($count ?? 12);
+        $posts = Post::where('category_id', $category->id)
+            ->when($sort, function ($query, $sort) {
+                return $query->orderBy('id', $sort);
+            })
+            ->paginate($count ?? 12);
 
 
         // return $posts;
 
-        return view('frontend.categorypostpage',compact('posts','category'));
+        return view('frontend.categorypostpage', compact('posts', 'category'));
     }
 }

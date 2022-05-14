@@ -45,6 +45,26 @@
                                 </div>
                             </div>
                             <div class="form-group row">
+                                <label class="col-form-label col-lg-3">Meta Keyword</label>
+                                <div class="col-lg-9">
+                                    <select class="form-control select-multiple-tokenization" multiple="multiple" data-fouc>
+										<option value="AZ">Arizona</option>
+										<option value="CO">Colorado</option>
+										<option value="ID">Idaho</option>
+										<option value="WY">Wyoming</option>
+										<option value="AL" selected>Alabama</option>
+										<option value="IA">Iowa</option>
+										<option value="KS">Kansas</option>
+										<option value="KY">Kentucky</option>
+									</select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-lg-3">Meta Description</label>
+                                <div class="col-lg-9">
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label class="col-form-label col-lg-3">Post Image</label>
                                 <div class="col-lg-9">
                                     <input type="file" name="thumbnail"

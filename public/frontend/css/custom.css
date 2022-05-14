@@ -13,6 +13,24 @@ aside {
     object-fit: fill;
 }
 
+.footer-widget input#email {
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+ol.breadcrumb li a i {
+    color: #222;
+}.no-post-found {padding: 100px 0;}
+
+.footer-widget button {
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
 .list-group a {
     text-decoration: none;
     color: #000;
@@ -63,7 +81,7 @@ aside {
 
 .blog-share a {
     margin-left: 10px;
-}
+border: 1px solid #ddd;border-radius: 50px;width: 40px;height: 40px;text-align: center;line-height: 40px;}
 
 footer {
     border-top: 1px solid #ddd;
@@ -92,16 +110,16 @@ ol.breadcrumb .breadcrumb-item {
 }
 
 .breadcrumb {
-	margin: 0;
-	/* justify-content: center; */
-	display: flex;
-	align-items: center;
+    margin: 0;
+    /* justify-content: center; */
+    display: flex;
+    align-items: center;
 }
 
 .breadcrumb li {
-	padding: 0 5px;
-	margin: 0px 3px;
-	font-size: 12px;
+    padding: 0 5px;
+    margin: 0px 3px;
+    font-size: 12px;
 }
 
 .breadcrumb-item {

@@ -14,7 +14,7 @@
                             <div class="card">
                                 <img src="{{ asset('storage/thumbnail/'.$post->thumbnail) }}" class="card-img-top">
                                 <div class="card-body">
-                                    <a href="{{ route('singlepost',$post->id) }}" class="card-text text-decoration-none fw-bold text-secondary">
+                                    <a href="{{ route('singlepost',$post->slug) }}" class="card-text text-decoration-none fw-bold text-secondary">
                                         {{ $post->title }}
                                     </a>
                                 </div>

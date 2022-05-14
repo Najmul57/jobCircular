@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 
 class SinglePostController extends Controller
 {
-    public function index($id)
+    public function index($slug)
     {
-        $post = Post::with('category')->firstWhere('id',$id);
+        $post = Post::with('category')->firstWhere('slug',$slug);
         $categories=Category::get();
         // return $post;
 

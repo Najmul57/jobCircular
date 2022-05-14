@@ -16,7 +16,7 @@ class HomePageController extends Controller
      */
     public function index()
     {
-        $posts = Post::paginate(30);
+        $posts = Post::latest()->paginate(30);
         // return $posts;
         // $categories = Category::with('posts')->get();
 
