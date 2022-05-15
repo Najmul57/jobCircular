@@ -28,6 +28,10 @@
                                 <label class="col-form-label col-lg-3">Post Description</label>
                                 <div class="col-lg-9">
                                     <textarea name="description" id="summernote" ></textarea>
+
+                                    @error('description')
+                                        <span style="color: red"> <strong>{{ $message }}</strong></span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group row">

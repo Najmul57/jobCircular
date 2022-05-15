@@ -24,8 +24,8 @@
                                         <span><strong><i class="fa-solid fa-clock"></i> May 7, 2022</strong></span>
                                     </div>
                                     <div class="blog-share d-flex justify-content-end">
-                                        <a href="#"><i style="color: #1877f2" class="fa-brands fa-facebook-f"></i></a>
-                                        <a href="#"><i  style="color: #25d366" class="fa-brands fa-whatsapp"></i></a>
+                                        <a href="https://www.facebook.com/sharer/sharer.php?{{ route('singlepost', $post->slug) }}"><i style="color: #1877f2" class="fa-brands fa-facebook-f"></i></a>
+                                        <a href="whatsapp://send?text={{ route('singlepost', $post->slug) }}" target="_blank"><i  style="color: #25d366" class="fa-brands fa-whatsapp"></i></a>
                                         <a href="#"> <i style="color: #bd081c" class="fa-brands fa-pinterest"></i></a>
                                         <a href="#"> <i style="color: #c32aa3" class="fa-brands fa-instagram"></i></a>
                                         <a href="#"> <i style="color: #1da1f2" class="fa-brands fa-twitter"></i></a>

@@ -45,7 +45,7 @@ class PostController extends Controller
     //    return $request->all();
         $validated = $request->validate([
             'title' => 'required',
-            'description' => 'required',
+            'description' => 'required|max:5000',
             'category_id' => 'required',
             'select_token_generatin' => 'required',
             'post_desc' => 'required',
