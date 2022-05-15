@@ -117,7 +117,7 @@ class PostController extends Controller
     {
 
         if ($request->hasFile('thumbnail')) {
-            $thumbnail = $request->thambnail->getClientOriginalName();
+            $thumbnail = $request->thumbnail->getClientOriginalName();
             $request->thumbnail->storeAs('thumbnail', $thumbnail, 'public');
             Post::findOrFail($id)->update([
                 'title' => $request->title,

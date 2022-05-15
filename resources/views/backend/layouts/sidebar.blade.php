@@ -58,7 +58,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url('/admin/home') }}" class="nav-link active">
+                    <a href="{{ url('/home') }}" class="nav-link active">
                         <i class="icon-home4"></i>
                         <span>
                             Dashboard
