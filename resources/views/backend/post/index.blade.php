@@ -33,7 +33,7 @@
                                                 src="{{ asset('storage/thumbnail/' . $post->thumbnail) }}" alt="photo">
                                         </td>
                                         {{-- <td style="width: 100%;">{!! $post->description !!}</td> --}}
-                                        <td>{{ $post->category_id }}</td>
+                                        <td>{{ $post->category->title }}</td>
                                         <td style="display: inline-block">
                                             <a href="{{ route('post.show', $post->id) }}" class="btn btn-success"><i
                                                     class="fa fa-eye"></i></a>
