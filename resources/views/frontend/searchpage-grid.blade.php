@@ -10,8 +10,10 @@
                 <div class="row">
 
                     @if (count($posts) > 0)
-                        <input type="hidden" name="keyword"
-                            value="@if (isset($_GET['keyword'])) {{ trim($_GET['keyword']) }} @endif">
+                    @isset($_GET['keyword'])
+                    <input type="hidden" name="keyword"
+                        value="{{ $_GET['keyword'] }}">
+                    @endisset
                         <!-- Sidebar Start -->
                         <div class="col-lg-3 d-none d-lg-block bg-light mt-3">
                             <div class="card mb-4 ">

@@ -44,7 +44,7 @@
         </li>
     </ul>
 
-    <span class="badge bg-pink-400 badge-pill ml-md-3 mr-md-auto">16 orders</span>
+    <span class="badge bg-pink-400 badge-pill ml-md-3 mr-md-auto">0 order</span>
 
     <ul class="navbar-nav">
         <li class="nav-item dropdown">

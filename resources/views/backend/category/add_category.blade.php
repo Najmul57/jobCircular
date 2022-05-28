@@ -47,7 +47,6 @@
             </div>
         </div>
         <!-- /form inputs -->
-
     </div>
     <!-- /content area -->
 @endsection

@@ -25,7 +25,6 @@
                 <!-- Sidebar Start -->
                 <!-- Sidebar End -->
                 <div class="col-lg-12 col-12">
-
                     @if (count($posts) > 0)
                         <!-- Filter Start -->
                         <form action="" method="GET">
@@ -60,7 +59,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </form>
                         <div class="row">
@@ -90,8 +88,6 @@
                             </div>
                         </div>
                     @endif
-
-
                 </div>
             </div>
     </section>

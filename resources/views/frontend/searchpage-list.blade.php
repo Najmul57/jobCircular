@@ -8,8 +8,10 @@
         <div class="container mt-2 pt-3">
             <form action="" method="get">
                 <div class="row">
+                    @isset($_GET['keyword'])
                     <input type="hidden" name="keyword"
-                        value="@if (isset($_GET['keyword'])) {{ trim($_GET['keyword']) }} @endif">
+                        value="{{ $_GET['keyword'] }}">
+                    @endisset
                     <!-- Sidebar Start -->
                     <div class="col-lg-3 d-none d-lg-block bg-light mt-3">
                         <div class="card mb-4 ">

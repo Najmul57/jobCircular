@@ -2,7 +2,6 @@
 
 @section('title', 'Category Page');
 
-
 @section('content')
     <div class="container mt-3">
         <div class="row">
