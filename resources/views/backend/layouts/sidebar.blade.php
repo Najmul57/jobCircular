@@ -54,8 +54,8 @@
                         </span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{ url('/home') }}" class="nav-link ">
+                <li class="nav-item @if (request()->routeIs('admin.home')) nav-item-expanded nav-item-open @endif">
+                    <a href="{{route('admin.home') }}" class="nav-link ">
                         <i class="icon-home4"></i>
                         <span>
                             Dashboard
@@ -65,7 +65,7 @@
                 </li>
 
                 <li
-                    class="nav-item nav-item-submenu @if (request()->routeIs('category.create', 'category.index')) nav-item-expanded nav-item-open @endif">
+                    class="nav-item nav-item-submenu @if (request()->routeIs('category.index', 'category.create')) nav-item-expanded nav-item-open @endif">
                     <a href="#" class="nav-link"><i class="icon-stack"></i> <span>Category</span></a>
 
                     <ul class="nav nav-group-sub" data-submenu-title="Layouts">
@@ -80,12 +80,13 @@
                     </ul>
                 </li>
                 <li
-                    class="nav-item nav-item-submenu @if (request()->routeIs('post.create', 'category.index')) nav-item-expanded nav-item-open @endif">
+                    class="nav-item nav-item-submenu @if (request()->routeIs('post.index', 'post.create')) nav-item-expanded nav-item-open @endif">
                     <a href="#" class="nav-link"><i class="icon-copy"></i> <span>Post</span></a>
 
                     <ul class="nav nav-group-sub" data-submenu-title="Layouts">
                         <li class="nav-item"><a href="{{ route('post.index') }}"
                                 class="nav-link  @if (request()->routeIs('post.index')) active @endif ">Show Post</a></li>
+
                         <li class="nav-item"><a href="{{ route('post.create') }}"
                                 class="nav-link @if (request()->routeIs('post.create')) active @endif ">Add Post</a>
                         </li>
